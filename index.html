@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VayuMitra — India Winter Smog &amp; Air Quality Assistant</title>
+    <meta
+      name="description"
+      content="GenAI-powered assistant helping families and communities across India navigate winter smog with live area-wise air quality maps, low-emission daily routines, indoor air quality hacks, and measurable impact tracking."
+    />
+    <meta property="og:title" content="VayuMitra — India Winter Smog & Air Quality Assistant" />
+    <meta
+      property="og:description"
+      content="Live area-wise air quality, indoor air quality hacks, low-emission routines, and direct impact insights tailored for Indian cities."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var mode = localStorage.getItem('vayumitra_theme_v1') || 'auto';
+          document.documentElement.dataset.aqiTheme = 'bad';
+          if (mode === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          document.documentElement.dataset.aqiTheme = 'bad';
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

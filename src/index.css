@@ -1,0 +1,216 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  /* Default: Bad Air Light */
+  :root,
+  :root[data-aqi-theme="bad"] {
+    color-scheme: light;
+    --vm-canvas: #fdf8f6;
+    --vm-header: rgba(255, 255, 255, 0.92);
+    --vm-surface: #ffffff;
+    --vm-surface-alt: #fffaf8;
+    --vm-muted: #faf1ed;
+    --vm-muted-hover: #f3e4dd;
+    --vm-border: #efe0d8;
+    --vm-border-strong: #ead5ca;
+    --vm-ink: #1c0f0c;
+    --vm-ink-secondary: #432a23;
+    --vm-ink-muted: #7a564b;
+    --vm-accent-from: #dc2626;
+    --vm-accent-to: #ea580c;
+    --vm-accent-mid: #f97316;
+    --vm-accent-text: #c2410c;
+    --vm-accent-soft: #fff7ed;
+    --vm-accent-border: #f97316;
+    --vm-glow-primary: rgba(234, 88, 12, 0.08);
+    --vm-glow-secondary: rgba(185, 28, 28, 0.04);
+    --vm-track-bg: #ead9d0;
+    --vm-user-bubble-text: #ffffff;
+  }
+
+  /* Bad / Hazardous Smog Dark (Auto default when AQI > 200) */
+  .dark,
+  .dark[data-aqi-theme="bad"] {
+    color-scheme: dark;
+    --vm-canvas: #0c0706;
+    --vm-header: rgba(18, 10, 8, 0.92);
+    --vm-surface: #160d0b;
+    --vm-surface-alt: #1c100d;
+    --vm-muted: #211310;
+    --vm-muted-hover: #2c1915;
+    --vm-border: #3a201a;
+    --vm-border-strong: #4a261d;
+    --vm-ink: #fff6f0;
+    --vm-ink-secondary: #ead4ca;
+    --vm-ink-muted: #b99184;
+    --vm-accent-from: #dc2626;
+    --vm-accent-to: #ea580c;
+    --vm-accent-mid: #f97316;
+    --vm-accent-text: #fb923c;
+    --vm-accent-soft: rgba(127, 29, 29, 0.42);
+    --vm-accent-border: #f97316;
+    --vm-glow-primary: rgba(234, 88, 12, 0.18);
+    --vm-glow-secondary: rgba(185, 28, 28, 0.1);
+    --vm-track-bg: #130a08;
+    --vm-user-bubble-text: #fff7ed;
+  }
+
+  /* Good Air Light (Auto default when AQI <= 100) */
+  :root[data-aqi-theme="good"] {
+    color-scheme: light;
+    --vm-canvas: #f1fbf6;
+    --vm-header: rgba(255, 255, 255, 0.92);
+    --vm-surface: #ffffff;
+    --vm-surface-alt: #f5fcf8;
+    --vm-muted: #eaf7f1;
+    --vm-muted-hover: #d8f0e4;
+    --vm-border: #cde9da;
+    --vm-border-strong: #b4dec8;
+    --vm-ink: #0a2217;
+    --vm-ink-secondary: #1e4232;
+    --vm-ink-muted: #4b7361;
+    --vm-accent-from: #059669;
+    --vm-accent-to: #0d9488;
+    --vm-accent-mid: #10b981;
+    --vm-accent-text: #047857;
+    --vm-accent-soft: #ecfdf5;
+    --vm-accent-border: #10b981;
+    --vm-glow-primary: rgba(16, 185, 129, 0.12);
+    --vm-glow-secondary: rgba(13, 148, 136, 0.06);
+    --vm-track-bg: #cde9da;
+    --vm-user-bubble-text: #ffffff;
+  }
+
+  /* Good Air Dark (when user selects Dark on Good AQI) */
+  .dark[data-aqi-theme="good"] {
+    color-scheme: dark;
+    --vm-canvas: #06120d;
+    --vm-header: rgba(8, 22, 16, 0.92);
+    --vm-surface: #0b1c15;
+    --vm-surface-alt: #0f241b;
+    --vm-muted: #122b20;
+    --vm-muted-hover: #19382a;
+    --vm-border: #1e4635;
+    --vm-border-strong: #275943;
+    --vm-ink: #ecfdf5;
+    --vm-ink-secondary: #bbf7d0;
+    --vm-ink-muted: #7cb49a;
+    --vm-accent-from: #059669;
+    --vm-accent-to: #0d9488;
+    --vm-accent-mid: #34d399;
+    --vm-accent-text: #34d399;
+    --vm-accent-soft: rgba(6, 78, 59, 0.45);
+    --vm-accent-border: #10b981;
+    --vm-glow-primary: rgba(16, 185, 129, 0.16);
+    --vm-glow-secondary: rgba(13, 148, 136, 0.08);
+    --vm-track-bg: #081610;
+    --vm-user-bubble-text: #ecfdf5;
+  }
+
+  /* Moderate / Haze Light (Auto default when AQI 101–200) */
+  :root[data-aqi-theme="moderate"] {
+    color-scheme: light;
+    --vm-canvas: #fcf8ef;
+    --vm-header: rgba(255, 255, 255, 0.92);
+    --vm-surface: #ffffff;
+    --vm-surface-alt: #fffcf5;
+    --vm-muted: #f9f2e1;
+    --vm-muted-hover: #f2e5c9;
+    --vm-border: #ede0c4;
+    --vm-border-strong: #e3cfa6;
+    --vm-ink: #201707;
+    --vm-ink-secondary: #4a3717;
+    --vm-ink-muted: #7d653c;
+    --vm-accent-from: #d97706;
+    --vm-accent-to: #ea580c;
+    --vm-accent-mid: #f59e0b;
+    --vm-accent-text: #b45309;
+    --vm-accent-soft: #fffbeb;
+    --vm-accent-border: #f59e0b;
+    --vm-glow-primary: rgba(245, 158, 11, 0.1);
+    --vm-glow-secondary: rgba(234, 88, 12, 0.05);
+    --vm-track-bg: #e7d7b4;
+    --vm-user-bubble-text: #ffffff;
+  }
+
+  /* Moderate / Haze Dark (when user selects Dark on Moderate AQI) */
+  .dark[data-aqi-theme="moderate"] {
+    color-scheme: dark;
+    --vm-canvas: #120e07;
+    --vm-header: rgba(22, 17, 9, 0.92);
+    --vm-surface: #1a140a;
+    --vm-surface-alt: #21190d;
+    --vm-muted: #261d0f;
+    --vm-muted-hover: #332714;
+    --vm-border: #423117;
+    --vm-border-strong: #543e1d;
+    --vm-ink: #fef7e8;
+    --vm-ink-secondary: #f3dfb6;
+    --vm-ink-muted: #b89e6f;
+    --vm-accent-from: #d97706;
+    --vm-accent-to: #ea580c;
+    --vm-accent-mid: #fbbf24;
+    --vm-accent-text: #fbbf24;
+    --vm-accent-soft: rgba(120, 53, 15, 0.45);
+    --vm-accent-border: #f59e0b;
+    --vm-glow-primary: rgba(245, 158, 11, 0.15);
+    --vm-glow-secondary: rgba(234, 88, 12, 0.08);
+    --vm-track-bg: #140f07;
+    --vm-user-bubble-text: #fffbeb;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--vm-canvas);
+    color: var(--vm-ink);
+    transition: background-color 220ms ease, color 220ms ease;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--vm-glow-primary);
+  }
+}
+
+@keyframes vm-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.vm-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: vm-marquee 38s linear infinite;
+}
+
+.vm-marquee-container:hover .vm-marquee-track,
+.vm-marquee-container:focus-within .vm-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+}

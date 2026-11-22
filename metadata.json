@@ -1,0 +1,6 @@
+{
+  "name": "VayuMitra",
+  "description": "GenAI-powered assistant helping families and communities across India navigate winter smog with live area-wise air quality maps, low-emission daily routines, indoor air quality hacks, and measurable impact tracking.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
